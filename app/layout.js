@@ -15,18 +15,34 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   display: "swap",
 });
-
 export const metadata = {
   title: "A Birthday Surprise — From Areeb",
   description: "A simple and elegant celebration.",
-  images: [
-    {
-      url: '/birthdaypng.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'Birthday',
-    },
-  ],
+
+  openGraph: {
+    title: "A Birthday Surprise — From Areeb",
+    description: "A simple and elegant celebration.",
+    url: "https://your-domain.com", // replace with your site
+    siteName: "Birthday Surprise",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dliahmplq/image/upload/v1775376504/birthdaypng_pzgu0n.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Birthday",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "A Birthday Surprise — From Areeb",
+    description: "A simple and elegant celebration.",
+    images: [
+      "https://res.cloudinary.com/dliahmplq/image/upload/v1775376504/birthdaypng_pzgu0n.jpg",
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
