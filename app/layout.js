@@ -19,17 +19,14 @@ const montserrat = Montserrat({
 export const metadata = {
   title: "A Birthday Surprise — From Areeb",
   description: "A simple and elegant celebration.",
-  openGraph: {
-    title: "A Birthday Surprise — From Areeb",
-    description: "A simple and elegant celebration.",
-    images: [
-      {
-        url: "/birthdaypng.jpg",
-        width: 1200,
-        height: 630,
-      }
-    ]
-  }
+  images: [
+    {
+      url: '/birthdaypng.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Birthday',
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
