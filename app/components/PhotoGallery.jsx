@@ -16,10 +16,6 @@ export default function PhotoGallery({ photos }) {
           Our Moments Together
         </h2>
         <Divider />
-        <p className="font-sans-ui text-[0.7rem] tracking-[0.1em] text-[rgba(201,168,76,0.28)]">
-          Replace the photos in <code className="text-[0.65em]">app/data/config.js</code> with your
-          Cloudinary links
-        </p>
       </div>
 
    <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
