@@ -1,26 +1,229 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --gold: #c9a84c;
+  --gold-dim: rgba(201, 168, 76, 0.18);
+  --bg: #080808;
+  --bg2: #101010;
+  --bg3: #141414;
+  --text: #f0ebe0;
+  --muted: rgba(240, 235, 224, 0.42);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+}
+
+.font-sans-ui {
+  font-family: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.06;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes giftPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -300% center;
+  }
+  100% {
+    background-position: 300% center;
+  }
+}
+
+@keyframes pulseRing {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(201, 168, 76, 0);
+  }
+}
+
+@keyframes lineGrow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes underline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes sparkFall {
+  0% {
+    transform: translateY(-10px) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(108vh) rotate(520deg) scale(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes scrollBob {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+.open-btn {
+  background: linear-gradient(90deg, #8a6520, #c9a84c, #e8d5a3, #c9a84c, #8a6520);
+  background-size: 300% auto;
+  animation: shimmer 3s linear infinite, pulseRing 2.5s ease-in-out infinite;
+  border: none;
+  padding: 1rem 3.4rem;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #080808;
+  cursor: pointer;
+  transition: transform 0.25s;
+}
+
+.open-btn:hover {
+  transform: scale(1.05);
+}
+
+.photo-card {
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-card img {
+  transition: transform 0.7s ease;
+  display: block;
+  width: 100%;
+}
+
+.photo-card:hover img {
+  transform: scale(1.07);
+}
+
+.photo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(201, 168, 76, 0);
+  transition: border-color 0.4s;
+  pointer-events: none;
+}
+
+.photo-card:hover::after {
+  border-color: rgba(201, 168, 76, 0.5);
+}
+
+.wish-item {
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+  transition: background 0.3s;
+}
+
+.wish-item:last-child {
+  border-bottom: none;
+}
+
+.wish-item:hover {
+  background: rgba(201, 168, 76, 0.04);
+}
+
+.audio-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  background: rgba(8, 8, 8, 0.88);
+  backdrop-filter: blur(12px);
+  color: var(--gold);
+  font-size: 1.05rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
+  animation: fadeIn 0.8s 1s ease both;
+}
+
+.audio-btn:hover {
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.1);
+}
+
+.anim-fade-in-delay {
+  animation: fadeIn 1s 0.2s ease both;
+}
+
+.page-enter {
+  animation: fadeIn 0.8s ease;
 }
