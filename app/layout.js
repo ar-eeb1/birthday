@@ -16,11 +16,11 @@ const montserrat = Montserrat({
   display: "swap",
 });
 export const metadata = {
-  title: "A Birthday Surprise — From Areeb",
+  title: "A Birthday Surprise — From Ankith",
   description: "A simple and elegant celebration.",
 
   openGraph: {
-    title: "A Birthday Surprise — From Areeb",
+    title: "A Birthday Surprise — From Ankith",
     description: "A simple and elegant celebration.",
     url: "https://your-domain.com", // replace with your site
     siteName: "Birthday Surprise",
@@ -37,7 +37,7 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "A Birthday Surprise — From Areeb",
+    title: "A Birthday Surprise — From Ankith",
     description: "A simple and elegant celebration.",
     images: [
       "https://res.cloudinary.com/dliahmplq/image/upload/v1775376504/birthdaypng_pzgu0n.jpg",

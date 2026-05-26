@@ -14,7 +14,7 @@ export default function BirthdayHero() {
       />
 
       <p className="font-sans-ui anim-fade-in-delay mb-12 text-[0.65rem] uppercase tracking-[0.32em] text-[var(--gold)]">
-        With Best Wishes · From Areeb - Zaid
+        With Best Wishes · From Ankith 
       </p>
 
       <h1
@@ -30,7 +30,7 @@ export default function BirthdayHero() {
         </span>
 
         <span className="block mt-2 text-[clamp(2.2rem,6vw,4.2rem)] tracking-[0.12em] uppercase">
-          Fatima
+          Harshita
         </span>
       </h1>
 

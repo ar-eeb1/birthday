@@ -20,7 +20,7 @@ export default function ClosingSection() {
 
         <div className="relative inline-block">
           <h2 className="font-serif text-[clamp(3.8rem,10vw,7.5rem)] font-light italic leading-none tracking-[0.06em] text-[var(--gold)]">
-            Areeb -Zaid
+            Ankith 
           </h2>
           <div
             className="mt-[0.7rem] h-px bg-[var(--gold)] opacity-55"
