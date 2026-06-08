@@ -33,5 +33,4 @@ I love you so much,
 aur I pray tera har sapna pura ho 🎉💕`,
 ];
 
-export const audioUrl =
-  "https://upload.wikimedia.org/wikipedia/commons/8/85/Happy_birthday_to_you_piano.ogg";
+export const audioUrl = "/happy-birthday.mp3";

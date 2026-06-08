@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Particles from "./Particles";
 import Divider from "./Divider";
+import { getBirthdayAudio, startBirthdayAudio } from "../lib/birthdayAudio";
 
 export default function IntroScreen() {
   const router = useRouter();
@@ -11,6 +12,7 @@ export default function IntroScreen() {
   const [showBtn, setShowBtn] = useState(false);
 
   useEffect(() => {
+    getBirthdayAudio();
     const t1 = setTimeout(() => setShowName(true), 2000);
     const t2 = setTimeout(() => setShowBtn(true), 3500);
     return () => {
@@ -22,6 +24,7 @@ export default function IntroScreen() {
   const handleOpen = () => {
     if (typeof window !== "undefined") {
       sessionStorage.setItem("bday_audio", "1");
+      startBirthdayAudio();
     }
     router.push("/birthday");
   };

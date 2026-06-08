@@ -1,48 +1,46 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { audioUrl } from "../data/config";
+import { useEffect, useState } from "react";
+import {
+  getBirthdayAudio,
+  isBirthdayAudioMuted,
+  setBirthdayAudioMuted,
+  startBirthdayAudio,
+} from "../lib/birthdayAudio";
 
 function getInitialMuted() {
   if (typeof window === "undefined") return true;
-  return sessionStorage.getItem("bday_audio") !== "1";
+  if (sessionStorage.getItem("bday_audio") === "1") return false;
+  return isBirthdayAudioMuted();
 }
 
 export default function AudioPlayer() {
-  const audioRef = useRef(null);
   const [muted, setMuted] = useState(getInitialMuted);
 
   useEffect(() => {
-    const a = new Audio(audioUrl);
-    a.loop = true;
-    a.volume = 0.4;
+    const a = getBirthdayAudio();
+    if (!a) return;
+
     a.muted = muted;
-    audioRef.current = a;
-    
-    a.play().catch((err) => {
-      console.warn("Audio autoplay blocked:", err);
-    });
-    
+
     if (sessionStorage.getItem("bday_audio") === "1") {
       sessionStorage.removeItem("bday_audio");
+      startBirthdayAudio();
+      setMuted(false);
+      return;
     }
-    
-    return () => {
-      a.pause();
-      a.src = "";
-      audioRef.current = null;
-    };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- single Audio instance; muted is initial-only
 
-  const toggleMute = () => {
-    const a = audioRef.current;
-    if (!a) return;
-    const next = !muted;
-    a.muted = next;
-    setMuted(next);
-    if (!next) {
+    if (!muted) {
+      startBirthdayAudio();
+    } else {
       a.play().catch(() => {});
     }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const toggleMute = () => {
+    const next = !muted;
+    setBirthdayAudioMuted(next);
+    setMuted(next);
   };
 
   return (
