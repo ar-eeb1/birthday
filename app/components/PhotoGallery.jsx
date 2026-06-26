@@ -32,7 +32,7 @@ export default function PhotoGallery({ photos }) {
       ) : photo.type === "video" ? (
         <video
           src={photo.url}
-          className="w-full object-cover rounded-lg mb-4"
+          className="w-full object-cover rounded-lg"
           controls
           onError={() => setBroken((b) => ({ ...b, [i]: true }))}
         />
@@ -40,7 +40,7 @@ export default function PhotoGallery({ photos }) {
         <img
           src={photo.url}
           alt={`Memory ${i + 1}`}
-          className="w-full object-cover rounded-lg mb-4"
+          className="w-full object-cover rounded-lg "
           onError={() => setBroken((b) => ({ ...b, [i]: true }))}
         />
       )}
