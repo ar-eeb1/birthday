@@ -3,7 +3,7 @@ import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "600"],
+  weight: ["300", "400", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-cormorant",
   display: "swap",
@@ -11,19 +11,19 @@ const cormorant = Cormorant_Garamond({
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "700"],
   variable: "--font-montserrat",
   display: "swap",
 });
 export const metadata = {
-  title: "A Birthday Surprise — From Ankith",
-  description: "A simple and elegant celebration.",
+  title: "Khizra's Vibrant Birthday Celebration 🎈",
+  description: "A colorful and modern birthday celebration filled with joy and surprises.",
 
   openGraph: {
-    title: "A Birthday Surprise — From Ankith",
-    description: "A simple and elegant celebration.",
-    url: "https://your-domain.com", // replace with your site
-    siteName: "Birthday Surprise",
+    title: "Khizra's Vibrant Birthday Celebration 🎈",
+    description: "A colorful and modern birthday celebration filled with joy and surprises.",
+    url: "https://your-domain.com",
+    siteName: "Birthday Celebration",
     images: [
       {
         url: "https://res.cloudinary.com/dliahmplq/image/upload/v1775376504/birthdaypng_pzgu0n.jpg",
@@ -37,8 +37,8 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "A Birthday Surprise — From Ankith",
-    description: "A simple and elegant celebration.",
+    title: "Khizra's Vibrant Birthday Celebration 🎈",
+    description: "A colorful and modern birthday celebration filled with joy and surprises.",
     images: [
       "https://res.cloudinary.com/dliahmplq/image/upload/v1775376504/birthdaypng_pzgu0n.jpg",
     ],

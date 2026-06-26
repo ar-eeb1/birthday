@@ -30,7 +30,7 @@ export default function Particles() {
       {pts.map((p) => (
         <div
           key={p.id}
-          className="absolute rounded-full bg-[var(--gold)]"
+          className="absolute rounded-full bg-gradient-to-r from-[var(--primary)] via-[var(--secondary)] to-[var(--tertiary)]"
           style={{
             left: p.left,
             top: p.top,

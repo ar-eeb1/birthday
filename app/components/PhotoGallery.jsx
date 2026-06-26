@@ -9,11 +9,11 @@ export default function PhotoGallery({ photos }) {
   return (
     <section className="mx-auto max-w-[1120px] px-8 py-24">
       <div className="mb-16 text-center">
-        <p className="font-sans-ui mb-4 text-[0.65rem] uppercase tracking-[0.32em] text-[var(--gold)]">
-          Memories
+        <p className="font-sans-ui mb-4 text-[0.65rem] uppercase tracking-[0.32em] font-bold bg-gradient-to-r from-[var(--tertiary)] to-[var(--primary)] bg-clip-text text-transparent">
+          📸 Memories & Moments 📸
         </p>
-        <h2 className="font-serif text-[clamp(2rem,5vw,3.2rem)] font-light tracking-[0.04em] text-[var(--text)]">
-          Our Moments Together
+        <h2 className="font-serif text-[clamp(2rem,5vw,3.2rem)] font-bold tracking-[0.04em] text-[var(--primary)]">
+          Our Precious Moments Together
         </h2>
         <Divider />
       </div>
@@ -22,11 +22,11 @@ export default function PhotoGallery({ photos }) {
   {photos.map((photo, i) => (
     <div
       key={`${i}-${photo.url}`}
-      className="break-inside-avoid photo-card opacity-0"
+      className="break-inside-avoid photo-card opacity-0 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[var(--secondary)]"
       style={{ animation: `fadeIn 0.9s ${0.08 + i * 0.12}s ease both` }}
     >
       {broken[i] ? (
-        <div className="flex h-[290px] items-center justify-center text-[0.62rem] uppercase tracking-[0.22em] text-[rgba(201,168,76,0.28)]">
+        <div className="flex h-[290px] items-center justify-center text-[0.62rem] uppercase tracking-[0.22em] bg-gradient-to-br from-[var(--primary)] to-[var(--tertiary)] text-white font-bold">
           {photo.type === "video" ? "YOUR VIDEO" : "YOUR PHOTO"}
         </div>
       ) : photo.type === "video" ? (

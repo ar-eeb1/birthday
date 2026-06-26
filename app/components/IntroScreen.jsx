@@ -30,32 +30,32 @@ export default function IntroScreen() {
   };
 
   return (
-    <div className="font-serif relative flex min-h-[100dvh] items-center justify-center overflow-hidden bg-[var(--bg)]">
+    <div className="font-serif relative flex min-h-[100dvh] items-center justify-center overflow-hidden bg-gradient-to-br from-purple-50 via-pink-50 to-cyan-50">
       <Particles />
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 72% 62% at 50% 50%, rgba(201,168,76,.05) 0%, transparent 68%)",
+            "radial-gradient(ellipse 72% 62% at 50% 50%, rgba(124,58,237,.08) 0%, transparent 68%)",
         }}
       />
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 100% 100% at 50% 100%, rgba(0,0,0,.5) 0%, transparent 55%)",
+            "radial-gradient(ellipse 100% 100% at 50% 100%, rgba(124,58,237,.15) 0%, transparent 55%)",
         }}
       />
 
       <div className="relative z-[5] max-w-[560px] px-8 py-8 text-center">
         <p
-          className="font-sans-ui anim-fade-in-delay mb-12 text-[0.65rem] uppercase tracking-[0.38em] text-[var(--gold)]"
+          className="font-sans-ui anim-fade-in-delay mb-12 text-[0.65rem] uppercase tracking-[0.38em] font-bold bg-gradient-to-r from-[var(--primary)] via-[var(--secondary)] to-[var(--tertiary)] bg-clip-text text-transparent"
         >
-          A Birthday Surprise
+          ✨ A Birthday Surprise ✨
         </p>
 
         <div
-          className="mb-9 text-[2.2rem] leading-none text-[var(--gold)] opacity-85"
+          className="mb-9 text-[2.2rem] leading-none opacity-100"
           style={{ animation: "giftPulse 3s ease-in-out infinite" }}
           aria-hidden
         >
@@ -63,13 +63,13 @@ export default function IntroScreen() {
         </div>
 
         <h1
-          className="text-[clamp(1.75rem,4.8vw,3.1rem)] font-light leading-[1.5] tracking-[0.04em] text-[var(--text)] opacity-0"
+          className="text-[clamp(1.75rem,4.8vw,3.1rem)] font-bold leading-[1.5] tracking-[0.04em] opacity-0 bg-gradient-to-r from-[var(--primary)] via-[var(--secondary)] to-[var(--tertiary)] bg-clip-text text-transparent"
           style={{ animation: "fadeUp 1s 0.5s ease both" }}
         >
           A little celebration made
           <br />
-          <em className="font-normal italic" style={{ fontWeight: 400 }}>
-            for you...
+          <em className="font-bold italic" style={{ fontWeight: 700 }}>
+            for you... 🎉
           </em>
         </h1>
 
